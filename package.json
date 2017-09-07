@@ -1,0 +1,22 @@
+{
+  "name": "comlis-web-scraping",
+  "version": "1.0.0",
+  "description": "This application is provide to send the acquired company data to comlis-data-store.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hotdrop/comlis-web-scraping.git"
+  },
+  "author": "tkenji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hotdrop/comlis-web-scraping/issues"
+  },
+  "homepage": "https://github.com/hotdrop/comlis-web-scraping#readme",
+  "dependencies": {
+    "puppeteer": "^0.10.2"
+  }
+}
