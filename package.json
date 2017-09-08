@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hotdrop/comlis-web-scraping#readme",
   "dependencies": {
-    "puppeteer": "^0.10.2"
+    "puppeteer": "^0.10.2",
+    "superagent": "^3.6.0"
   }
 }
