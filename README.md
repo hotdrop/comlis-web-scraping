@@ -13,7 +13,7 @@ REST APIを提供しています。
 
 # 概要
 このアプリケーションが持つ機能は2つです。  
-  1. httpサーバー(REST APIでcomlis-data-storeとやり取りする)
+  1. comlis-data-storeとのインタフェース(REST APIでのHTTP通信)
   2. webスクレイピング
 
 # 処理の流れ(現在の想定)
