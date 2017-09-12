@@ -7,7 +7,7 @@ const Company = require('../lib/model/Company.js');
 
     const companies = [];
     for(let i = 1; i <= 10; i++) {
-      const company = new Company('ID00' + i, 'model化' + i);
+      const company = Company.create('ID00' + i, 'model化' + i);
       company.overView('Test概要');
       company.workPlace('Tokyo');
       company.employeeNum(i * 10);

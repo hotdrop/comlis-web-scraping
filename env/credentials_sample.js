@@ -1,4 +1,4 @@
-modules.exports = {
+module.exports = {
   url:
   // Login info of the WebSite to be scraping.
   loginname: XXX
