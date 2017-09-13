@@ -6,7 +6,7 @@ const Company = require('../lib/model/Company.js');
     const server = await Server.create();
 
     const companies = [];
-    for(let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 10; i++) {
       const company = Company.create('ID00' + i, 'model化' + i);
       company.overView('Test概要');
       company.workPlace('Tokyo');
@@ -20,7 +20,7 @@ const Company = require('../lib/model/Company.js');
     await server.doPostCompanies(companies);
     console.log('  Complete! Please check Swagger-ui with POST data.');
 
-  } catch(err) {
+  } catch (err) {
     console.log('  Failed...');
     console.log(err);
   }

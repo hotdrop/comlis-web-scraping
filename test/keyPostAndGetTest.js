@@ -10,10 +10,10 @@ const Server = require('../lib/Server.js');
     await server.doPostKey(newKey);
 
     const newKeyGetFromServer = await server.doGetKey();
-    assert.equal(newKey, newKeyGetFromServer, ` Error! "${newKey}" != "${newKeyGetFromServer}" `)
+    assert.equal(newKey, newKeyGetFromServer, ` Error! "${newKey}" != "${newKeyGetFromServer}" `);
     console.log('  Success!');
 
-  } catch(err) {
+  } catch (err) {
     console.log('  Failed...');
     console.log(err);
   }

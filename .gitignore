@@ -1,3 +1,4 @@
 env/settings.js
 env/credentials.js
 node_modules/
+.eslintrc.js

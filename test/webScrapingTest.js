@@ -9,7 +9,7 @@ const Website = require('../lib/WebSite.js');
     await webSite.scraping(lastItemKey);
     console.log('  Complete!');
 
-  } catch(err) {
+  } catch (err) {
     console.log('  Failed...');
     console.log(err);
   }
