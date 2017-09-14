@@ -23,10 +23,8 @@ REST APIを提供しています。
 ひとまず現案のアプリケーションの実行から終了までの流れは以下を想定しています。  
 
   1. dockerコンテナ起動
-  2. `comlis-data-store`からkey :star: をGET
+  2. `comlis-data-store`からkeyをGET
   3. 取得したkeyをもとに指定のWebサイトをスクレイピングし情報を取得
   4. 取得した情報をjson形式に加工
   5. 加工したjsonを`comlis-data-store`へPOST
-  6. どこまでスクレイピングしたかを示す情報を`comlis-data-store`へPOST
-
-:star: keyを何にするかはまだ未定
+  6. どこまでスクレイピングしたかを示す情報をkeyとして`comlis-data-store`へPOST
