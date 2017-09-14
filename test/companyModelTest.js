@@ -150,8 +150,8 @@ function salaryHighTest() {
 
 function toJSONTest() {
   console.log(' - toJSON Test start.');
-  const resultJson = {id: 'ID001', name: 'test', overView: 'testes', workPlace: 'NY', employeeNum: 10, salaryLow: 200, salaryHigh: 300};
-  const company = Company.create('ID001', 'test');
+  const resultJson = {id: 'ID006', name: 'nobita manjyuu', overView: 'testes', workPlace: 'NY', employeeNum: 10, salaryLow: 200, salaryHigh: 300};
+  const company = Company.create('ID006', 'nobita manjyuu');
   company.overView('testes');
   company.workPlace('NY');
   company.employeeNum(10);
@@ -159,6 +159,14 @@ function toJSONTest() {
   company.salaryHigh(300);
   assert(JSON.stringify(company.toJSON()) === JSON.stringify(resultJson));
   console.log(' - toJSON Test Success.\n');
+}
+
+function itemKeyTest() {
+  console.log(' - itemKey Test start.');
+  const company = Company.create('ID007', 'nobi nobita');
+  company.itemKey = 'doraemon';
+  assert(company.itemKey === 'doraemon');
+  console.log(' - itemKey Test Success.\n');
 }
 
 console.log('- Test Start!');
@@ -170,4 +178,5 @@ employeeNumTest();
 salaryLowTest();
 salaryHighTest();
 toJSONTest();
+itemKeyTest();
 console.log('- All Test Clear!');
