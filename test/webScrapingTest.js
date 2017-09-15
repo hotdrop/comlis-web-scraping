@@ -16,7 +16,13 @@ const Website = require('../lib/WebSite.js');
     console.log(` lastItemKey = ${lastItemKey}`);
 
     console.log('  - Second test. LastItemKey uses the data aquired just before.');
-    // TODO write second test.
+    const secondCompanies = await webSite.scraping(lastItemKey);
+    if (secondCompanies.length === 0){
+      console.log('  nothing new data.');
+    } else {
+      for (const company of secondCompanies)
+        console.log(JSON.stringify(company.toJSON()));
+    }
     console.log('  Complete!');
 
   } catch (err) {

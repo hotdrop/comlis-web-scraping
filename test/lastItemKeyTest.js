@@ -30,6 +30,7 @@ assert(secondTakeList.length === 3);
 lastItemKey = getLastItemKey(secondTakeList);
 
 testItems.push(new TestItem('010', '2017/09/15 10:10'));
+
 console.log(` - Third Take Item start. LastItemKey = ${lastItemKey}`);
 const thirdTakeList = takeItems(lastItemKey);
 for (const item of thirdTakeList)
