@@ -10,7 +10,7 @@ const Website = require('../lib/WebSite.js');
 
     console.log('  - First test. LastItemKey is Empty.');
     const companies = await webSite.scraping('');
-    const lastItemKey = webSite.getlastItemKey(companies);
+    const lastItemKey = webSite.getLastItemKey(companies);
     for (const company of companies)
       console.log(JSON.stringify(company.toJSON()));
     console.log(` lastItemKey = ${lastItemKey}`);
