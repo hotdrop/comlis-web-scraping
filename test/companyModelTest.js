@@ -17,25 +17,25 @@ const Company = require('../lib/model/Company.js');
     console.log(' - Name Test Success.\n');
   };
 
-  const overViewTest = () => {
-    console.log(' - OverView Test start.');
+  const overviewTest = () => {
+    console.log(' - overview Test start.');
     const company = Company.create('ID001', 'shield');
 
     console.log('  - [null] test start.');
-    company.overView = null;
-    assert(company._overView === '');
+    company.overview = null;
+    assert(company._overview === '');
     console.log('  - [null] test success!');
 
     console.log('  - [max length] test start.');
     const overLenghtStr = makeStrByLength(201);
-    company.overView = overLenghtStr;
-    assert(company._overView.length === 200);
+    company.overview = overLenghtStr;
+    assert(company._overview.length === 200);
     const maxLengthStr = makeStrByLength(200);
-    company.overView = maxLengthStr;
-    assert(company._overView.length === 200);
+    company.overview = maxLengthStr;
+    assert(company._overview.length === 200);
     console.log('  - [max length] test success!');
 
-    console.log(' - OverView Test Success.\n');
+    console.log(' - overview Test Success.\n');
   };
 
   const workPlaceTest = () => {
@@ -66,32 +66,32 @@ const Company = require('../lib/model/Company.js');
     return str;
   });
 
-  const employeeNumTest = () => {
-    console.log(' - EmployeeNum Test start.');
+  const employeesNumTest = () => {
+    console.log(' - employeesNum Test start.');
     const company = Company.create('ID003', 'ATCU');
 
     console.log('  - [null] test start');
-    company.employeeNum = null;
-    assert(company._employeeNum === 0);
+    company.employeesNum = null;
+    assert(company._employeesNum === 0);
     console.log('  - [null] test success!');
 
     console.log('  - [not number] test start.');
-    company.employeeNum = 'aaa';
-    assert(company._employeeNum === 0);
+    company.employeesNum = 'aaa';
+    assert(company._employeesNum === 0);
     console.log('  - [not number] test success!');
 
     console.log('  - [range number] test start.');
-    company.employeeNum = -1;
-    assert(company._employeeNum === 0);
-    company.employeeNum = 100000;
-    assert(company._employeeNum === 0);
-    company.employeeNum = 1;
-    assert(company._employeeNum === 1);
-    company.employeeNum = 99999;
-    assert(company._employeeNum === 99999);
+    company.employeesNum = -1;
+    assert(company._employeesNum === 0);
+    company.employeesNum = 100000;
+    assert(company._employeesNum === 0);
+    company.employeesNum = 1;
+    assert(company._employeesNum === 1);
+    company.employeesNum = 99999;
+    assert(company._employeesNum === 99999);
     console.log('  - [range number] test success!');
 
-    console.log(' - EmployeeNum Test Success.\n');
+    console.log(' - employeesNum Test Success.\n');
   };
 
   const salaryLowTest = () => {
@@ -152,11 +152,11 @@ const Company = require('../lib/model/Company.js');
 
   const toJSONTest = () => {
     console.log(' - toJSON Test start.');
-    const resultJson = {id: 'ID006', name: 'nobita manjyuu', overView: 'testes', workPlace: 'NY', employeeNum: 10, salaryLow: 200, salaryHigh: 300};
+    const resultJson = {id: 'ID006', name: 'nobita manjyuu', overview: 'testes', workPlace: 'NY', employeesNum: 10, salaryLow: 200, salaryHigh: 300};
     const company = Company.create('ID006', 'nobita manjyuu');
-    company.overView = 'testes';
+    company.overview = 'testes';
     company.workPlace = 'NY';
-    company.employeeNum = 10;
+    company.employeesNum = 10;
     company.salaryLow = 200;
     company.salaryHigh = 300;
     assert(JSON.stringify(company.toJSON()) === JSON.stringify(resultJson));
@@ -174,9 +174,9 @@ const Company = require('../lib/model/Company.js');
   console.log('- Test Start!');
   idNullAndEmptyTest();
   nameNullAndEmptyTest();
-  overViewTest();
+  overviewTest();
   workPlaceTest();
-  employeeNumTest();
+  employeesNumTest();
   salaryLowTest();
   salaryHighTest();
   toJSONTest();
