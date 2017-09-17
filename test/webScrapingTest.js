@@ -5,8 +5,8 @@ const Website = require('../lib/WebSite.js');
     const webSite = await Website.create();
 
     console.log('- Test Start');
-    // このテストは実際にサイトをスクレイピングするので、取得項目数や中身は不明。
-    // なのでassertは使わずコンソールログで目視確認する。
+    // This test actually scraping the site, unknown acquired contents.
+    // Therefore, manually it in the console log.
 
     console.log('  - First test. LastItemKey is Empty.');
     const companies = await webSite.scraping('');
