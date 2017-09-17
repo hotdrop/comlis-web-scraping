@@ -1,26 +1,26 @@
 # comlis-web-scraping
-このアプリケーションは、指定したWebサイトをスクレイピングし、取得した会社情報を  
-`comlis-data-store`へ送信する機能を提供します。  
-このアプリケーションはdockerコンテナ上で動作させる想定です。  
-今のところ、アプリの実行契機はdockerコンテナの起動タイミングと考えています。  
-(いずれ定期実行も検討していこうと思っています。)  
+This application scrapes the designated Website and sends the obtained company data to `comlis-data-store` :star:  
+Also, this app's an assumption to run on the docker container.
 
-[comlis-data-store](https://github.com/hotdrop/comlis-data-store)とは、Spring + Redisで作成した簡易データストアアプリケーションです。  
-REST APIを提供しています。  
+:star:  What is comlis-data-store: https://github.com/hotdrop/comlis-data-store  
 
-### スクレイピング処理を実装するにあたって
-スクレイピング処理は、どうしても対象サイトに特化したコードを書く必要があります。  
-特定のサイトに限定したコードを公開した場合、そのサイトにアクセス負荷等何らかの迷惑をかける恐れが  
-あると考え、スクレイピング処理に関するコードは管理対象外にします。  
+### About Implements sraping to specific website.
+In scraping function, it is absolutely necessary to write specialized code for the target web site.
+If I publish such code, think that there is a possibility of causing some trouble such as access log on the Website,  
+and exclude code related to scraping processing from management.  
 
-# 概要
-このアプリケーションが持つ機能は2つです。  
-  1. comlis-data-storeとのインタフェース(REST APIでのHTTP通信)
-  2. webスクレイピング
+# OverView
+This application has two functions.
+  1. Interface with comlis-data-store(HTTP with REST API)
+  2. Web scraping
 
-# 処理の流れ
-現案のアプリケーションの実行から終了までの流れは以下の通りです。  
-  1. `comlis-data-store`からkey取得APIを叩く。(GET)
-  2. 取得したkeyをもとに指定のWebサイトをスクレイピングし情報を取得する。
-  3. 取得した情報をjson形式に変換し、API経由で`comlis-data-store`へ送信する。(POST)
-  4. 最後に取得したデータの識別情報をAPI経由で`comlis-data-store`へ送信する。(POST)
+# Process Flow
+The flow from the current apllication process to the end.  
+  1. Execute the key acquisition API from `comlis-data-store`. (GET)
+  2. Based on the get key scraping the designated Website to acquire the company data.
+  3. Convert the scraping data to json format and send it to `comlis-data-store` with API. (POST)
+  4. The idenfitication information of the scraping data is send to `comlis-data-store` with API. (POST)
+
+# Unimplemented function
+  - Operate on cloud such as AWS
+  - Periodic execution
