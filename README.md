@@ -21,6 +21,9 @@ The flow from the current apllication process to the end.
   3. Convert the scraping data to json format and send it to `comlis-data-store` with API. (POST)
   4. The idenfitication information of the scraping data is send to `comlis-data-store` with API. (POST)
 
+# Using
+  TODO
+
 # Unimplemented function
   - Operate on cloud such as AWS
   - Periodic execution
