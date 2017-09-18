@@ -48,7 +48,7 @@ docker build -t puppeteer:latest ./docker
 ## Step3
 Run docker container
 ```command
-docker run -v $WORK_DIRECTORY/comlis-web-scraping:/usr/local/src -w /usr/local/src --rm -it puppeteer node index.js
+docker run -v $WORK_DIRECTORY/comlis-web-scraping:/usr/local/src -w /usr/local/src --rm -d puppeteer node index.js
 ```
 
 # Unimplemented function
