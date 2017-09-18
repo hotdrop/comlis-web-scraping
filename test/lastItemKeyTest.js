@@ -5,6 +5,12 @@ function TestItem(id, date) {
   this.date = date;
 }
 
+/**
+ * This test is for checking whether to the intended action when lastItemKey is set to the date.
+ * 
+ * Prerequisites
+ *  nothing.
+ */
 (() => {
 
   const executeTest = ((items, lastItemKey, expectedTakeItemNum) => {

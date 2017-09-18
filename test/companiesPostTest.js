@@ -1,6 +1,10 @@
 const Server = require('../lib/Server.js');
 const Company = require('../lib/model/Company.js');
 
+/**
+ * Prerequisites
+ *  1. run comlis-data-store application on Server(Springboot and Redis).
+ */
 (async() => {
   try {
     const server = await Server.create();

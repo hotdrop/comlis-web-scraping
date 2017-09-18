@@ -1,6 +1,10 @@
 const assert = require('assert');
 const Company = require('../lib/model/Company.js');
 
+/**
+ * Prerequisites
+ *  nothing.
+ */
 (() => {
 
   const idNullAndEmptyTest = () => {

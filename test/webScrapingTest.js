@@ -1,5 +1,9 @@
 const Website = require('../lib/WebSite.js');
 
+/**
+ * Prerequisites
+ *  1. Implementation of WebSite.js has been completed.
+ */
 (async() => {
   try {
     const webSite = await Website.create();
