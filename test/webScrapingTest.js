@@ -3,15 +3,16 @@ const Website = require('../lib/WebSite.js');
 /**
  * Prerequisites
  *  1. Implementation of WebSite.js has been completed.
+ *
+ * Notes.
+ *  This test actually scraping the site, unknown acquired contents.
+ *  Therefore, manually it in the console log.
  */
 (async() => {
   try {
     const webSite = await Website.create();
 
     console.log('- Test Start');
-    // This test actually scraping the site, unknown acquired contents.
-    // Therefore, manually it in the console log.
-
     console.log('  - First test. LastItemKey is Empty.');
     const companies = await webSite.scraping('');
     const lastItemKey = webSite.getLastItemKey(companies);
