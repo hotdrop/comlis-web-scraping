@@ -18,10 +18,10 @@ const WebSite = require('./lib/WebSite.js');
 
     await server.doPostCompanies(companies);
     await server.doPostKey(newLastItemKey);
-    console.log('- Web scraping complete. ');
+    console.log('- Complete. ');
 
   } catch (err) {
-    console.log('- Web scraping failed...');
+    console.log('- Failed...');
     console.log(err);
   }
 })();
