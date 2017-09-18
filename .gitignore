@@ -1,4 +1,11 @@
+.eslintrc.js
+
+# Dependency directories
+node_modules
+
+# my application env
 env/settings.js
 env/credentials.js
-node_modules/
-.eslintrc.js
+
+# Optional eslint cache
+.eslintcache
