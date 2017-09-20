@@ -156,13 +156,15 @@ const Company = require('../lib/model/Company.js');
 
   const toJSONTest = () => {
     console.log(' - toJSON Test start.');
-    const resultJson = {id: 'ID006', name: 'nobita manjyuu', overview: 'testes', workPlace: 'NY', employeesNum: 10, salaryLow: 200, salaryHigh: 300};
+    const testEpoch = Date.parse('2017/09/14 10:00');
+    const resultJson = {id: 'ID006', name: 'nobita manjyuu', overview: 'testes', workPlace: 'NY', employeesNum: 10, salaryLow: 200, salaryHigh: 300, dateEpoch: testEpoch};
     const company = Company.create('ID006', 'nobita manjyuu');
     company.overview = 'testes';
     company.workPlace = 'NY';
     company.employeesNum = 10;
     company.salaryLow = 200;
     company.salaryHigh = 300;
+    company.dateEpoch = testEpoch
     assert(JSON.stringify(company.toJSON()) === JSON.stringify(resultJson));
     console.log(' - toJSON Test Success.\n');
   };

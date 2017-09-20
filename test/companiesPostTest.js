@@ -10,13 +10,14 @@ const Company = require('../lib/model/Company.js');
     const server = await Server.create();
 
     const companies = [];
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 5; i++) {
       const company = Company.create('ID00' + i, 'model化' + i);
       company.overview = 'Test概要';
       company.workPlace = 'Tokyo';
       company.employeesNum = i * 10;
-      company.salaryLow = i * 20;
-      company.salaryHigh = i * 30;
+      company.salaryLow = i * 200;
+      company.salaryHigh = i * 300;
+      company.dateEpoch = Date.parse('2017/09/14 10:00');
       companies.push(company);
     }
 
