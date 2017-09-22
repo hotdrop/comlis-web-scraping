@@ -157,14 +157,24 @@ const Company = require('../lib/model/Company.js');
   const toJSONTest = () => {
     console.log(' - toJSON Test start.');
     const testEpoch = Date.parse('2017/09/14 10:00');
-    const resultJson = {id: 'ID006', name: 'nobita manjyuu', overview: 'testes', workPlace: 'NY', employeesNum: 10, salaryLow: 200, salaryHigh: 300, dateEpoch: testEpoch};
+    const resultJson = {
+      id: 'ID006',
+      name: 'nobita manjyuu',
+      overview: 'testes',
+      workPlace: 'NY',
+      employeesNum: 10,
+      salaryLow: 200,
+      salaryHigh: 300,
+      url: 'https://test.test',
+      dateEpoch: testEpoch};
     const company = Company.create('ID006', 'nobita manjyuu');
     company.overview = 'testes';
     company.workPlace = 'NY';
     company.employeesNum = 10;
     company.salaryLow = 200;
     company.salaryHigh = 300;
-    company.dateEpoch = testEpoch
+    company.url = 'https://test.test';
+    company.dateEpoch = testEpoch;
     assert(JSON.stringify(company.toJSON()) === JSON.stringify(resultJson));
     console.log(' - toJSON Test Success.\n');
   };
@@ -177,6 +187,24 @@ const Company = require('../lib/model/Company.js');
     console.log(' - itemKey Test Success.\n');
   };
 
+  const urlTest = () => {
+    console.log(' - URL Test start.');
+    const company = Company.create('ID008', 'sield plus');
+    company.url = null;
+    assert(company._url === '');
+    company.url = 'error';
+    assert(company._url === '');
+    company.url = 'http:error';
+    assert(company._url === '');
+    company.url = 'errorhttp://www.google';
+    assert(company._url === '');
+    company.url = 'http://www.test';
+    assert(company._url === 'http://www.test');
+    company.url = 'https://www.test';
+    assert(company._url === 'https://www.test');
+    console.log(' - URL Test Success. \n');
+  };
+
   console.log('- Test Start!');
   idNullAndEmptyTest();
   nameNullAndEmptyTest();
@@ -187,5 +215,6 @@ const Company = require('../lib/model/Company.js');
   salaryHighTest();
   toJSONTest();
   itemKeyTest();
+  urlTest();
   console.log('- All Test Clear! \n');
 })();

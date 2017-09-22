@@ -11,13 +11,14 @@ const Company = require('../lib/model/Company.js');
 
     const companies = [];
     for (let i = 1; i <= 5; i++) {
-      const company = Company.create('ID00' + i, 'model化' + i);
+      const company = Company.create('ID00' + i, 'VName' + i);
       company.overview = 'Test概要';
       company.workPlace = 'Tokyo';
       company.employeesNum = i * 10;
       company.salaryLow = i * 200;
       company.salaryHigh = i * 300;
-      company.dateEpoch = Date.parse('2017/09/14 10:00');
+      company.url = 'http://www.testable' + i + '.test.test';
+      company.dateEpoch = Date.parse('2017/09/20 12:30');
       companies.push(company);
     }
 
