@@ -1,11 +1,11 @@
 # comlis-web-scraping
-This application scrapes the designated Website and sends the obtained company data to `comlis-data-store` :star:  
+This application scrapes the designated Website and sends the obtained company data to `comlis-data-store`.  
 Also, this app's an assumption to run on the docker container.
 
-:star:  What is comlis-data-store: https://github.com/hotdrop/comlis-data-store  
+:star:  What is comlis-data-store? Please refer to [this repository](https://github.com/hotdrop/comlis-data-store)
 
 # Environment
-- node 8.4.0
+- node v8.5.0
 - puppeteer 0.10.2
 - superagent 3.6.0
 
@@ -36,8 +36,16 @@ And rewrite two env files.
 2. settings.js(Refer to settings_sample.js)
 
 ## Step2
+This application connecting with the comlis-data-store at https.  
+Therefore, you need to prepare server.crt of comlis-data-store and client CA files.  
+Currently, I'm using a self signed certificate.  
+:tropical_fish: Please refer to other website for how to create self signed certificate.  
+:tropical_fish: If you can prepared these files, please put server.crt, client.crt and client.key in env directory.
+
+## Step3
 Make docker images.  
-Puppeteer does not run with only Official docker image. The reason is that library such as `libX11-xcb.so.1` are short.
+Puppeteer does not run with only Official docker image.   
+The reason is that library such as `libX11-xcb.so.1` are short.  
 [Refer to issue](https://github.com/GoogleChrome/puppeteer/issues/290#issuecomment-322921352)
 Therefore, Make own docker image using `./docker/Dockerfile` in this repository or get puppeteer work image from docker hub.
 ```command
