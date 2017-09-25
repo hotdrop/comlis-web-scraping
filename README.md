@@ -53,7 +53,7 @@ Therefore, Make own docker image using `./docker/Dockerfile` in this repository 
 docker build -t puppeteer:latest ./docker
 ```
 
-## Step3
+## Step4
 Run docker container
 ```command
 docker run -v $WORK_DIRECTORY/comlis-web-scraping:/usr/local/src -w /usr/local/src --rm -d puppeteer node index.js
