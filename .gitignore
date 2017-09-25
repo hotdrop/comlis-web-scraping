@@ -7,5 +7,10 @@ node_modules
 env/settings.js
 env/credentials.js
 
+# ca
+env/client.crt
+env/client.key
+env/server.crt
+
 # Optional eslint cache
 .eslintcache
